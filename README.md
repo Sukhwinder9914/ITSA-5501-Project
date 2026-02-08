@@ -12,7 +12,7 @@ ITSA-5501-Project/
 
 ## Git Workflow
 - Repository initialized using Git
-- Files tracked with version control
+- Files tracked using version control
 - Feature branch (`experiment`) created for testing changes
 - Changes committed with descriptive messages
 - Experiment branch merged into main branch
@@ -23,6 +23,12 @@ ITSA-5501-Project/
 - Git & GitHub
 - Git Bash (Windows)
 - Markdown
+
+## Example Workflow
+1. Create a feature branch
+2. Make changes and commit
+3. Open a Pull Request
+4. Merge into main
 
 ## Main Branch Update
 This section was added on the main branch to simulate collaborative changes before merging.

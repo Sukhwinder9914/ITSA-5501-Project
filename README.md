@@ -1,34 +1,24 @@
-# ITSA-5501 Project – Milestone 1
+# ITSA-5501 Project – Milestone 2 (Docker Compose)
 
-This repository demonstrates Git version control, branching,
-merging, pull requests, and tagging as part of DevOps practices.
+## Project Structure
+- frontend/ (static website)
+- docker/ (docker-compose.yml)
+- prometheus.yml (Prometheus config)
 
-## Repository Structure
-ITSA-5501-Project/
-├── docker/
-├── k8s/
-├── iac/
-└── README.md
+## Services (Docker Compose)
+- frontend (nginx:alpine) -> http://localhost:9090
+- user-db (mongo) with volume user_data
+- product-db (postgres) with volume product_data
+- cache (redis)
+- prometheus (prom/prometheus) -> http://localhost:9091
 
-## Git Workflow
-- Repository initialized using Git
-- Files tracked using version control
-- Feature branch (`experiment`) created for testing changes
-- Changes committed with descriptive messages
-- Experiment branch merged into main branch
-- Pull Request created and merged on GitHub
-- Milestone tagged as v1.0
+## Commands Used
+### Start containers (detached)
+docker-compose up -d
 
-## Tools Used
-- Git & GitHub
-- Git Bash (Windows)
-- Markdown
+### View running containers
+docker ps
 
-## Example Workflow
-1. Create a feature branch
-2. Make changes and commit
-3. Open a Pull Request
-4. Merge into main
-
-## Main Branch Update
-This section was added on the main branch to simulate collaborative changes before merging.
+### Scale frontend (Option B)
+Added a second service `frontend-scale` (no host port mapping) and scaled it:
+docker-compose up -d --scale frontend-scale=3

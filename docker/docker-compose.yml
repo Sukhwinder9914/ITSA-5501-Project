@@ -11,6 +11,13 @@ services:
     networks:
       - app-network
 
+  frontend-scale:
+    image: nginx:alpine
+    volumes:
+      - ../frontend:/usr/share/nginx/html
+    networks:
+      - app-network
+
   user-db:
     image: mongo
     volumes:
